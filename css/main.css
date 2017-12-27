@@ -213,7 +213,7 @@ header .header-content .header-content-inner p {
 }
 
 /*form styles */
-#card-header-form {
+#card-header-form, .myAlert {
   display: none;
 }
 

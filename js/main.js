@@ -103,42 +103,39 @@ $(document).ready(() => {
 
 })(jQuery); // End of use strict
 
-function ajaxForm () {
+function ajaxForm() {
     $("#myForm").submit((e) => {
-        let valid_name = false;
-        let valid_email = false;
-        let valid_msg = false;
+        let valid_name;
+        let valid_email;
+        let valid_msg;
         let filter_email = $("#email").val();
 
-        //verify name field
-        if ($("#nombre").val().length <= 1) {
-            $("#alert-name").removeClass("d-none");
+        if ($("#nombre").val().length < 2 || $("#nombre").val().length > 25) {
+            $("#alert-name").show();
             valid_name = false;
         } else {
             valid_name = true;
         }
 
-        if (/^\w+([\.-]?\ w+)*@\w+([\.-]?\ w+)*(\.\w{2,3})+$/.test(filter_email)) {
+        if (validate_email(filter_email)) {
             valid_email = true;
         } else {
-            $("#alert-email").removeClass("d-none");
+            $("#alert-email").show();
             valid_email = false;
         }
 
-        //verify msg field
-        if ($("#mensaje").val().length <= 0) {
-            $("#alert-msg").removeClass("d-none");
+        if ($("#mensaje").val().length < 2) {
+            $("#alert-msg").show();
             valid_msg = false;
         } else {
             valid_msg = true;
         }
 
-        //verify values and ajax
         if (valid_name === true && valid_email === true && valid_msg === true) {
             $.ajax({
                 url: 'contact.php',
                 type: 'POST',
-                data: 'name='+$("#nombre").val()+'&email='+$("#email").val()+'&message='+$("#mensaje").val(),
+                data: 'name=' + $("#nombre").val() + '&email=' + $("#email").val() + '&message=' + $("#mensaje").val(),
                 success: () => {
                     $("#card-body-form").fadeOut("slow");
                     $("#card-header-form").fadeIn("slow")
@@ -152,9 +149,14 @@ function ajaxForm () {
             });
         } else {
             setTimeout(() => {
-                $("#alert-name, #alert-email, #alert-msg").slideUp();
+                $(".myAlert").hide();
             }, 10000);
         }
         e.preventDefault();
     });
+}
+
+function validate_email (email) {
+    const re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(email);
 }

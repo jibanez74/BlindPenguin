@@ -212,24 +212,24 @@ include ("header.html");
               <div class="form-group">
                 <label for="nombre"> Tú nombre </label>
                 <input type="text" class="form-control" id="nombre" name="name" placeholder="escribe tu nombre">
-                <div class="alert alert-danger d-none" id="alert-name">
-                  Por favor, escribe tu nombre.
+                <div class="alert alert-danger myAlert" id="alert-name">
+                    <p> Por favor escribe tu nombre </p>
                 </div>
               </div>
 
               <div class="form-control">
                 <label for="email"> Tú email </label>
                 <input type="text" class="form-control" id="email" name="email" placeholder="escribe tu email">
-                <div class="alert alert-danger d-none" id="alert-email">
-                  Por favor, escribe tu email.
+                <div id="alert-email" class="alert alert-danger myAlert">
+                  <p> Por favor escribe una dirección de email válida </p>
                 </div>
               </div>
 
               <div class="form-control">
                 <label for="mensaje"> Tú mensaje </label>
                 <textarea id="mensaje" name="message" class="form-control" rows="5"></textarea>
-                <div class="alert alert-danger d-none" id="alert-msg">
-                  Por favor, escribe tu mensaje.
+                <div class="alert alert-danger myAlert" id="alert-msg">
+                  <p> Por favor escribe tu mensaje </p>
                 </div>
               </div>
 
