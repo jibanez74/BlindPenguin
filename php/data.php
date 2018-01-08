@@ -1,4 +1,5 @@
 <?php
+
 $about = "Al igual  que muchos otros programadores nos especializamos en la construcción de aplicaciones web que se adaptan a las necesidades de nuestros clientes,  pero, ¿que nos hace diferente?, pues nos distinguimos por utilizar las ultimas tecnologías en el mercado web que les permitirán integrarse  o hacer negocios con las empresas mas dinámicas y reconocidas en Europa y Estados Unidos. Todos nuestros proyectos se caracterizan por utilizar tecnologías punteras y de código abierto, como Angular y Docker.  Estas herramientas no solo son costo efectivas, sino que también cuentan con el apoyo técnico de grandes compañías como Google, Microsoft o Canonical.  El desarrollo de estas soluciones web para su empresa bien  pueden prepararse en ingles, español o ambos idiomas, de acuerdo  a su interés. Cuente con nosotros  para la creación y el mantenimiento de sus proyectos en línea .  Nuestro proceso es muy simple.  Comuníquese hoy mismo a través 34 633 32 63 41 o utilice el área de contacto, al  final de esta página para ponerse en contacto con nosotros. Permítanos escuchar su necesidad para hacerle nuestras recomendaciones.";
 
 $websites = array(
