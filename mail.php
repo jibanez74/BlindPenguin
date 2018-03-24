@@ -16,7 +16,7 @@ if (isset($_POST["name"]) && isset($_POST["message"]) && isset($_POST["email"]))
     die ();
   }
 
-  $toJose = "jose@blindpenguincode.com";
+  $to = "blindpenguincode@gmail.com";
 
   $subject = $name.'with email'.$email.'sent you a message';
 
@@ -30,7 +30,6 @@ if (isset($_POST["name"]) && isset($_POST["message"]) && isset($_POST["email"]))
 
   $message = wordwrap($message, 72);
 
-  mail($toJose, $subject, $message, $headers);
-  mail($toMiguel, $subject, $message, $headers);
+  mail($to, $subject, $message, $headers);
 }
 ?>
